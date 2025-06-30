@@ -1,10 +1,10 @@
 # ExpLLM: Towards Chain of Thought for Facial Expression Recognition
 
-[[`arXiv`](https://arxiv.org/abs/2409.02828)][[`Paper`](https://ieeexplore.ieee.org/document/10948346)]
+[[`arXiv`](https://arxiv.org/abs/2409.02828)][[`Paper`](https://ieeexplore.ieee.org/document/10948346)][[`Project`](https://starhiking.github.io/ExpLLM_Page/)]
 
 > [ExpLLM: Towards Chain of Thought for Facial Expression Recognition](https://starhiking.github.io/ExpLLM_Page/)  
 > Xing Lan, Jian Xue, Ji Qi, Dongmei Jiang, Ke Lu and Tat-Seng Chua
-> IEEE TMM 2025
+> ```(IEEE TMM 2025)```
 
 ![overview](./img/pipeline.jpg)
 
@@ -78,10 +78,13 @@ AffectNet-kaggle/
     git clone https://huggingface.co/lmsys/vicuna-7b-v1.5
 ```
 
-### 2. Evaluate Model
+### 2. Train and Eval Model
 Change `IDX` option in script to specify the gpu ids for evaluation, multiple ids denotes multiple gpu evaluation.
 
 ```shell
+    # train on raf-db
+    bash scripts/train_rafdb.sh
+
     # evaluate on raf-db val set
     bash scripts/valid_rafdb.sh
 ```
@@ -89,19 +92,6 @@ Change `IDX` option in script to specify the gpu ids for evaluation, multiple id
 Accuracy:
 
 ![Accuracy result](./img/result.jpg)
-
-
-
-
-
-### 3. Train Model
-
-```shell
-    # train on raf-db
-    bash scripts/train_rafdb.sh
-    # train on affectnet
-    bash scripts/train_affectnet_kaggle.sh
-```
 
 Note that GPU memory should not be less than 24GB.
 

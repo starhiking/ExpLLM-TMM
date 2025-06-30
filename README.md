@@ -40,27 +40,26 @@
 Download RAF-DB and AffectNet-Kaggle from website and put the zip file under the directory following below structure, (xxx.json) denotes their original name.
 
 ```
-./data
-|── coco
-│   └── annotations
-|   |   └──coco_train.json(person_keypoints_train2017.json)
-|   |   └──coco_val.json(person_keypoints_val2017.json)
-|   └── images
-|   |   └──train2017
-|   |   |   └──000000000009.jpg
-|   |   └──val2017
-|   |   |   └──000000000139.jpg
-├── HumanArt
-│   └── annotations
-|   |   └──validation_humanart.json
-|   └── images
-|   |   └──2D_virtual_human
-├── mpii
-│   └── annot
-|   |   └──valid.json
-|   |   └──gt_valid.mat
-|   └── images
-|   |   └──000001163.jpg
+RAF-DB/basic/Image/aligned/
+├── train*.jpg
+└── test*.jpg
+
+AffectNet-kaggle/
+├── README.md
+├── train-sample-affectnet.csv
+├── valid-sample-affectnet.csv
+├── train_class/
+│   ├── class001/
+│   │   └── *.jpg
+│   ├── class002/
+│   ├── class003/
+│   ├── ...
+│   └── class008/
+└── val_class/
+    ├── class001/
+    ├── class002/
+    ├── ...
+    └── class008/
 ```
 ## Usage
 
@@ -69,15 +68,11 @@ Download RAF-DB and AffectNet-Kaggle from website and put the zip file under the
 ```shell
     git lfs install
 
-    git clone https://huggingface.co/d0ntcare/LocLLM
+    git clone https://huggingface.co/starhiking/ExpLLM/tree/main
 
-    mkdir checkpoints
-    mkdir checkpoints/ckpts
-    mv LocLLM/coco checkpoints/ckpts
-    mv LocLLM/h36m checkpoints/ckpts
-    # for training
-    mkdir checkpoints/model_weights
-    mv LocLLM/pretrained/dinov2_vitl14_pretrain.pth checkpoints/model_weights
+    mv ExpLLM/ckpts checkpoints/ckpts
+    mv ExpLLM/model_weights checkpoints/model_weights
+
     # clone vicuna1.5
     cd checkpoints/model_weights
     git clone https://huggingface.co/lmsys/vicuna-7b-v1.5
@@ -87,23 +82,25 @@ Download RAF-DB and AffectNet-Kaggle from website and put the zip file under the
 Change `IDX` option in script to specify the gpu ids for evaluation, multiple ids denotes multiple gpu evaluation.
 
 ```shell
-    # evaluate on coco val set
-    bash scripts/valid_coco.sh
-    # evaluate on h36m set
-    bash scripts/valid_h36m.sh
-    # evaluate on humanart set
-    bash scripts/valid_humanart.sh
-    # evaluate on mpii set
-    bash scripts/valid_mpii.sh
+    # evaluate on raf-db val set
+    bash scripts/valid_rafdb.sh
 ```
+
+Accuracy:
+
+![Accuracy result](./img/result.jpg)
+
+
+
+
 
 ### 3. Train Model
 
 ```shell
-    # train on coco
-    bash scripts/train_coco.sh
-    # train on h36m and mpii
-    bash scripts/train_h36m.sh
+    # train on raf-db
+    bash scripts/train_rafdb.sh
+    # train on affectnet
+    bash scripts/train_affectnet_kaggle.sh
 ```
 
 Note that GPU memory should not be less than 24GB.

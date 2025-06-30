@@ -1,0 +1,1 @@
+data_list/anno_json/rafdb_valid.json,/mnt/data/lanxing/RAF-DB/basic/Image/aligned

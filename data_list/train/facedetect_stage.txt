@@ -1,0 +1,4 @@
+data_list/anno_json/aflw2000_box.json,/mnt/data/lanxing/AFLW2000,3
+data_list/anno_json/300wlp_box.json,/mnt/data/lanxing/300W_LP,0.2
+data_list/anno_json/utkface_box.json,/mnt/data/lanxing/UTK-face-wild/images,1
+data_list/anno_json/celeba_box.json,/mnt/data/lanxing/celeba/img_celeba,1

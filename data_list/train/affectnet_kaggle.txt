@@ -1,0 +1,2 @@
+data_list/anno_json/Affectnet_kaggle_train-sample-affectnet.json,/mnt/data/lanxing/AffectNet-kaggle,3
+data_list/anno_json/Affectnet_kaggle_train-sample-affectnet_mini_description.json,/mnt/data/lanxing/AffectNet-kaggle,1

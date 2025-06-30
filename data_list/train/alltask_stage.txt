@@ -1,0 +1,4 @@
+data_list/anno_json/utkface_all.json,/mnt/data/lanxing/UTK-face-wild/images
+data_list/anno_json/fairface_all.json,/mnt/data/lanxing/fairface-1.25
+data_list/anno_json/300wlp_all.json,/mnt/data/lanxing/300W_LP
+data_list/anno_json/celeba_all_train.json,/mnt/data/lanxing/celeba/img_celeba

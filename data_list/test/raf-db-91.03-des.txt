@@ -1,0 +1,1 @@
+scripts/convert_test_des_json/need_test_raf-db_91.03_des.json,/mnt/data/lanxing/RAF-DB/basic/Image/aligned

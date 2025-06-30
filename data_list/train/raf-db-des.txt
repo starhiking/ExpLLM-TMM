@@ -1,0 +1,2 @@
+data_list/anno_json/rafdb_emo_au_train_mini_description.json,/mnt/data/lanxing/RAF-DB/basic/Image/aligned,1
+data_list/anno_json/rafdb_train.json,/mnt/data/lanxing/RAF-DB/basic/Image/aligned,3
